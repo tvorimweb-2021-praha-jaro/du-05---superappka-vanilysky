@@ -31,3 +31,110 @@ body {
 }
 
 /* ----- zde začni psát vlastní CSS ----- */
+
+:root {
+    --primary: white;
+}
+
+.uvod {
+    background-image: url(images/pozadi.jpg);
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 1.8rem;
+}
+
+nav a {
+    display: flex;
+    flex-basis: 50%;
+    justify-content: center;
+    text-decoration: none;
+    padding: 1rem;  
+}
+
+nav a:hover {
+    background-color: #48418e;
+    color: var(--primary);
+}
+
+.uvod-menu {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    
+}
+
+.uvod-menu a {
+    text-decoration: none;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+    border-radius: 20px;
+    font-size: 1.8rem;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2.5rem;
+}
+
+.uvod-menu a:hover {
+    background-color: #48418e;
+}
+
+.uvod h1 {
+    color: var(--primary);
+    font-size: 6rem;
+    margin: 0;
+    font-weight: 400;
+}
+
+.uvod {
+    padding: 3rem 4rem 3rem 4rem;
+}
+
+.uvod p {
+    color:var(--primary);
+    font-size: 3.5rem;
+    margin: 0;
+    font-weight: 300;
+    margin-bottom: 2rem;
+    
+}
+
+.informace {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-left: 4rem;
+    padding-right: 4rem;
+}
+
+.informace img {
+    width: 150px;
+}
+
+.informace h2 {
+    color: #48418e;
+    padding: 0.8rem;
+    font-size: 2.5rem;
+}
+
+@media screen and (min-width:600px) {
+
+    .uvod-menu {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+
+    .uvod-menu a {
+        margin-right: 2rem;
+        display: flex;
+        justify-content: center;
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+}
