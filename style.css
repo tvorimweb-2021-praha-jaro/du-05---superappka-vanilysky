@@ -36,22 +36,20 @@ body {
     --primary: white;
 }
 
-.uvod {
-    background-image: url(images/pozadi.jpg);
+.obal {
+    width: auto;
 }
 
 nav {
     display: flex;
     flex-wrap: wrap;
-    font-size: 1.8rem;
 }
 
 nav a {
-    display: flex;
-    flex-basis: 50%;
-    justify-content: center;
+    width: 50%;
     text-decoration: none;
-    padding: 1rem;  
+    text-align: center;
+    padding: 0.5rem;
 }
 
 nav a:hover {
@@ -59,71 +57,122 @@ nav a:hover {
     color: var(--primary);
 }
 
+.uvod {
+    background-image: url(images/pozadi.jpg); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--primary);
+    padding: 1.5rem;
+}
+
+.uvod h1 {
+    margin: 0;
+    font-weight: 400;
+    font-size: 3rem;
+}
+
+.uvod p {
+    font-weight: 300;
+    font-size: 1.8rem;
+    margin: 0 0 1rem 0;
+}
+
 .uvod-menu {
-    text-decoration: none;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     flex-wrap: wrap;
+    justify-content: space-between;
     
 }
 
 .uvod-menu a {
-    text-decoration: none;
     color: var(--primary);
-    border: 2px solid var(--primary);
-    border-radius: 20px;
-    font-size: 1.8rem;
-    padding: 1.5rem;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 2.5rem;
+    text-decoration: none;
+    border: 1px solid var(--primary);
+    border-radius: 10px;
+    box-shadow: 0px 0px 1px 0px #cfcfcf;
+    padding: 1rem;
+    text-align: center;
+    margin-bottom: 1rem;
 }
 
 .uvod-menu a:hover {
     background-color: #48418e;
+    border: hidden;
 }
 
-.uvod h1 {
-    color: var(--primary);
-    font-size: 6rem;
-    margin: 0;
-    font-weight: 400;
+.uvod-menu a:active {
+    background-color: purple;
+    animation: odkazy 0.5s infinite alternate;
 }
 
-.uvod {
-    padding: 3rem 4rem 3rem 4rem;
+@keyframes odkazy {
+    from { background-color:#48418e }
+    to { background-color:purple }
 }
 
-.uvod p {
-    color:var(--primary);
-    font-size: 3.5rem;
-    margin: 0;
-    font-weight: 300;
-    margin-bottom: 2rem;
-    
-}
 
 .informace {
     display: flex;
     flex-direction: column;
     text-align: center;
-    padding-left: 4rem;
-    padding-right: 4rem;
 }
 
 .informace img {
-    width: 150px;
+    width: 90px;
+}
+
+.letadlo {
+    transform: rotate(0deg);
+    transition: transform 2s ease-in 0.5s;
+}
+
+.letadlo:hover {
+    transform: rotate(360deg);
+}
+
+.bubliny {
+    transition: transform 0.5s ease;
+}
+
+.bubliny:hover {
+    transform: scale(1.5, 1.5)
+}
+
+.mapa {
+    transform: translate(0, 0);
+    transition: transform 2s ease;
+}
+
+.mapa:hover {
+    transform: translate(50%, 0);
 }
 
 .informace h2 {
     color: #48418e;
-    padding: 0.8rem;
-    font-size: 2.5rem;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    margin: 1rem 0 1rem 0;
 }
 
-@media screen and (min-width:600px) {
+.informace p {
+    margin-top: 0.5rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
 
+footer {
+    background-color: #48418e;
+    color: white;
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    padding: 0.5rem;
+}
+
+@media screen and (min-width: 480px) {
+    
     .uvod-menu {
         display: flex;
         flex-direction: row;
@@ -131,10 +180,118 @@ nav a:hover {
     }
 
     .uvod-menu a {
-        margin-right: 2rem;
+        margin-right: 1.5rem;
         display: flex;
         justify-content: center;
-        padding-left: 3rem;
-        padding-right: 3rem;
+        text-align: center;
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+        font-size: 1rem;
     }
+
+    .uvod p {
+        font-size: 1.6rem;
+    }
+
+    .uvod h1 {
+        font-size: 2.8rem;
+    }
+
+}
+
+@media screen and (min-width: 650px) {
+    
+    nav {
+        display: flex;
+        flex-wrap: nowrap;
+        margin-right: 5rem;
+    }
+
+    nav a {
+        font-size: 0.9rem;
+        padding: 1rem;
+    }
+
+    .uvod h1 {
+        font-size: 5.2rem;
+    }
+
+    .uvod p {
+        font-size: 3.2rem;
+        font-weight: 300;
+    }
+
+    .uvod-menu a {
+        font-size: 1.5rem;
+    }
+
+   
+
+    .informace {
+        display: flex;
+        flex-direction: row;
+        margin-top: 2rem;
+    }
+
+    .naopak {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .naopak h2 {
+        font-size: 1.5rem;
+    }
+
+    .informace img {
+        width: 80px;
+    }
+
+}
+
+@media screen and (min-width: 850px) {
+
+    nav {
+        font-size: 1rem;
+        display: inline-block;
+        padding: 0.8rem;
+        
+    }
+    .uvod {
+    background-image: url(images/telefon.png), url(images/pozadi.jpg);
+    background-size: 35%, cover;
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    }
+
+    .uvod h1 {
+        font-size: 4.5rem;
+    }
+
+    .uvod p {
+        display: inline-block;
+        font-size: 2.7rem;
+        width: 50%;
+    }
+
+    .uvod-menu a {
+        font-size: 1rem;
+    }
+
+    .informace {
+        flex-direction: row;
+        justify-content: space-between;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+   
+    .informace img {
+        width: 70px;
+    }
+
+    .cast-chatuj {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
 }
